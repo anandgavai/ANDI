@@ -1,10 +1,10 @@
 <section ng-controller="PanelController as panel">
-    <ul class="nav nav-pills">
-        <li ng-class="{acive:panel.isSelected(1)}"> <a href ng-click="panel.selectTab(1)">Test Selection</a></li>
+    <ul class="nav nav-tabs">
+        <li ng-class="{acive:panel.isSelected(1)}" class="active"> <a href ng-click="panel.selectTab(1)" data-toggle="tab">Test Selection</a></li>
 
-        <li ng-class="{acive:panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">Demographics and Data Entry</a></li>
+        <li ng-class="{acive:panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)" data-toggle="tab" >Demographics and Data Entry</a></li>
         
-        <li ng-class="{acive:panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)">Results</a></li>
+        <li ng-class="{acive:panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)" data-toggle="tab">Results</a></li>
 
       <div  ng-controller="treeController as treeCtrl">
         <div class="panel" ng-show="panel.isSelected(1)">
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <div class="panel col-sm-12 col-xs-12 col-lg-12" ng-show="panel.isSelected(2)">
+        <div class="panel col-sm-12 col-xs-12 col-lg-12" ng-show="panel.isSelected(2)" class="tab-pane fade in active">
             <form name="patient.form" ng-model="fields" ng-submit="treeCtrl.submit()" novalidate angular-validator>  
               <div class="table-responsive" >
                 <div>
@@ -85,15 +85,19 @@
                 </div>
                 <hr>
                 <a class="btn" title="Export Table" ng-click="csv.generate()" ng-href="{{ csv.link() }}" download="PatientTable.csv">
-                <i class="glyphicon glyphicon-new-window"></i> Download Template
+                <i class="glyphicon glyphicon-download-alt"></i> Download Template
                 </a>
-                <span id="helpblock" class="help-block">
-                "If there exists more than 5 patients. Download this template; fill in the test scores for more patients in each column and upload this file below. Make sure none of the fields are left empty !
-                </span>
+                <div class="alert alert-info">
+                  <strong>Information!</strong> If there exists more than 5 patients. Download this template; fill in the test scores for more patients in each column and upload this file. Make sure none of the fields are left empty !
+                </div>
+
                   <div  class="fileinput fileinput-new" data-provides="fileinput">
                     <span class="btn btn-default btn-file">
                     <input type="file" name="..." id="fileContent" ></span>
                     <span class="fileinput-filename"></span>
+                    <a class="btn" title="Upload to Table" ng-click="csv.generate()" ng-href="{{ csv.link() }}" upload="PatientTable.csv">
+                  <i class="glyphicon glyphicon-upload"></i> Upload data
+                  </a>
                   </div>
                   <br><br>
                   <h3>Advanced Settings</h3>

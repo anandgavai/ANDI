@@ -226,6 +226,7 @@ app.controller('treeController', function($http,$scope,$timeout) {
   // check to make sure the form is completely valid
     if ($scope.patient.form.$invalid) {
       if(!$scope.patient.form.sig.$error.required && !$scope.patient.form.conf.$error.required){
+        console.log("Hello World")
         var files = $("#fileContent")[0].files;
         if (files.length) {
           var r = new FileReader();

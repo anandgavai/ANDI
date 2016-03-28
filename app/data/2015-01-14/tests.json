@@ -4,33 +4,58 @@
       {
         "children": [
           {
-            "children": [], 
+            "Dataset": "AVLT", 
+            "SPSS name": "AVLTtotal", 
+            "highborder": "75.001", 
+            "highweb": "75", 
             "id": "total 1 to 5", 
             "label": "Total trial 1 to 5", 
+            "lowborder": "15", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "AVLT", 
+            "SPSS name": "AVLT_delrecal_all", 
+            "highborder": "15.001", 
+            "highweb": "15", 
             "id": "delayed recall 1 to 5", 
             "label": "Delayed recall 1 to 5", 
+            "lowborder": "3", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "AVLT", 
+            "SPSS name": "AVLTrecognition", 
+            "highborder": "30.001", 
+            "highweb": "30", 
             "id": "recognition 1 to 5", 
             "label": "Recognition 1 to 5", 
+            "lowborder": "8", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "AVLT", 
+            "SPSS name": "AVLT_1_3", 
+            "highborder": "45.001", 
+            "highweb": "45", 
             "id": "total 1 to 3", 
             "label": "Total trial 1 to 3", 
+            "lowborder": "8", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "AVLT", 
+            "SPSS name": "AVLTDelayed1_3", 
+            "highborder": "15.001", 
+            "highweb": "15", 
             "id": "del recall 1 to 3", 
             "label": "Delayed recall 1 to 3", 
+            "lowborder": "2", 
+            "lowweb": "0", 
             "value": ""
           }
         ], 
@@ -41,39 +66,69 @@
       {
         "children": [
           {
-            "children": [], 
+            "Dataset": "SRT", 
+            "SPSS name": "SRT_TR", 
+            "highborder": "150.001", 
+            "highweb": "150", 
             "id": "TR", 
             "label": "Total recall (TR)", 
+            "lowborder": "45", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "SRT", 
+            "SPSS name": "SRT_LTR", 
+            "highborder": "150.001", 
+            "highweb": "150", 
             "id": "LTR", 
             "label": "Long Term Retrieval (LTR)", 
+            "lowborder": "2", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "SRT", 
+            "SPSS name": "SRT_LTS", 
+            "highborder": "150.001", 
+            "highweb": "150", 
             "id": "LTS", 
             "label": "Long Term Storage (LTS)", 
+            "lowborder": "2", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "SRT", 
+            "SPSS name": "SRT_CLTR", 
+            "highborder": "150.001", 
+            "highweb": "150", 
             "id": "CLTR", 
             "label": "Consistent Long Term Retrieval (CLTR)", 
+            "lowborder": "0", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "SRT", 
+            "SPSS name": "SRT_MCR", 
+            "highborder": "12.001", 
+            "highweb": "12", 
             "id": "MCR", 
             "label": "Multiple Choice Recognition (MCR)", 
+            "lowborder": "5", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "SRT", 
+            "SPSS name": "SRT_DR", 
+            "highborder": "12.001", 
+            "highweb": "12", 
             "id": "DR", 
             "label": "Delayed Recall (DR)", 
+            "lowborder": "1", 
+            "lowweb": "0", 
             "value": ""
           }
         ], 
@@ -84,39 +139,69 @@
       {
         "children": [
           {
-            "children": [], 
+            "Dataset": "RBMT", 
+            "SPSS name": "RBMTpr1immrec", 
+            "highborder": "42.001", 
+            "highweb": "42", 
             "id": "prose 1 immrec", 
             "label": "prose 1 immediate recall", 
+            "lowborder": "5", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "RBMT", 
+            "SPSS name": "RBMTpr1delrec", 
+            "highborder": "42.001", 
+            "highweb": "42", 
             "id": "prose 1 delrec", 
             "label": "prose 1 delayed recall", 
+            "lowborder": "2", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "RBMT", 
+            "SPSS name": "RBMTpr2immrec", 
+            "highborder": "42.001", 
+            "highweb": "42", 
             "id": "prose 2 immrec", 
             "label": "prose 2 immediate recall", 
+            "lowborder": "5", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "RBMT", 
+            "SPSS name": "RBMTpr2delrec", 
+            "highborder": "42.001", 
+            "highweb": "42", 
             "id": "prose 2 delrec", 
             "label": "prose 2 delayed recall", 
+            "lowborder": "2", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "RBMT", 
+            "SPSS name": "RBMTprIMMED", 
+            "highborder": "84.001", 
+            "highweb": "84", 
             "id": "prose 1 plus pr2 immrec", 
             "label": "prose 1 + 2 immediate recall", 
+            "lowborder": "10", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "RBMT", 
+            "SPSS name": "RBMTprDELAY", 
+            "highborder": "84.001", 
+            "highweb": "84", 
             "id": "prose 1 plus pr2 delrec", 
             "label": "prose 1 + 2 delayed recall", 
+            "lowborder": "4", 
+            "lowweb": "0", 
             "value": ""
           }
         ], 
@@ -134,15 +219,25 @@
       {
         "children": [
           {
-            "children": [], 
+            "Dataset": "TMT", 
+            "SPSS name": "TMTa", 
+            "highborder": "150.001", 
+            "highweb": "3000", 
             "id": "a", 
             "label": "a", 
+            "lowborder": "10", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "TMT", 
+            "SPSS name": "TMTa", 
+            "highborder": "500.001", 
+            "highweb": "3000", 
             "id": "b", 
             "label": "b", 
+            "lowborder": "10", 
+            "lowweb": "0", 
             "value": ""
           }
         ], 
@@ -153,21 +248,36 @@
       {
         "children": [
           {
-            "children": [], 
+            "Dataset": "Stroop", 
+            "SPSS name": "Stroop_CardI_whole", 
+            "highborder": "100.001", 
+            "highweb": "3000", 
             "id": "card I word", 
             "label": "Card I word", 
+            "lowborder": "30", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "Stroop", 
+            "SPSS name": "Stroop_CardII_whole", 
+            "highborder": "100.001", 
+            "highweb": "3000", 
             "id": "card II color", 
             "label": "Card II color", 
+            "lowborder": "30", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "Stroop", 
+            "SPSS name": "Stroop_CardIII_whole", 
+            "highborder": "100.001", 
+            "highweb": "3000", 
             "id": "card III interference", 
             "label": "Card III interference", 
+            "lowborder": "30", 
+            "lowweb": "0", 
             "value": ""
           }
         ], 
@@ -185,27 +295,47 @@
       {
         "children": [
           {
-            "children": [], 
+            "Dataset": "LF", 
+            "SPSS name": "LF_letter1", 
+            "highborder": "600.001", 
+            "highweb": "60", 
             "id": "letter 1", 
             "label": "1st letter", 
+            "lowborder": "3", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "LF", 
+            "SPSS name": "LF_letter2", 
+            "highborder": "600.001", 
+            "highweb": "60", 
             "id": "letter 2", 
             "label": "2nd letter", 
+            "lowborder": "3", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "LF", 
+            "SPSS name": "LF_letter3", 
+            "highborder": "600.001", 
+            "highweb": "60", 
             "id": "letter 3", 
             "label": "3rd letter", 
+            "lowborder": "3", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "LF", 
+            "SPSS name": "LF_totalletter123", 
+            "highborder": "180.001", 
+            "highweb": "180", 
             "id": "total letter 123", 
             "label": "total 3 lettters", 
+            "lowborder": "10", 
+            "lowweb": "0", 
             "value": ""
           }
         ], 
@@ -216,15 +346,25 @@
       {
         "children": [
           {
-            "children": [], 
+            "Dataset": "SF", 
+            "SPSS name": "Sfanimal", 
+            "highborder": "60.001", 
+            "highweb": "60", 
             "id": "Animals", 
             "label": "total animals 1 minute", 
+            "lowborder": "8", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "SF", 
+            "SPSS name": "Sfoccupation", 
+            "highborder": "60.001", 
+            "highweb": "60", 
             "id": "Occupations", 
             "label": "total occupations 1 minute", 
+            "lowborder": "5", 
+            "lowweb": "0", 
             "value": ""
           }
         ], 
@@ -240,13 +380,37 @@
   {
     "children": [
       {
-        "children": [], 
+        "children": [
+          {
+            "Dataset": "Raven", 
+            "SPSS name": "RAPM_12itemShort", 
+            "highborder": "120.01", 
+            "highweb": "12", 
+            "id": "shortform 12 item", 
+            "label": "12 item short form", 
+            "lowborder": "3", 
+            "lowweb": "0", 
+            "value": ""
+          }
+        ], 
         "id": "RAPM", 
         "label": "Raven Advanced Progressive Matrices", 
         "value": ""
       }, 
       {
-        "children": [], 
+        "children": [
+          {
+            "Dataset": "DART", 
+            "SPSS name": "DARTRAW", 
+            "highborder": "100.001", 
+            "highweb": "100", 
+            "id": "raw score", 
+            "label": "raw score", 
+            "lowborder": "20", 
+            "lowweb": "0", 
+            "value": ""
+          }
+        ], 
         "id": "DART", 
         "label": "Dutch Adult Reading Test", 
         "value": ""
@@ -257,7 +421,26 @@
     "value": ""
   }, 
   {
-    "children": [], 
+    "children": [
+      {
+        "children": [
+          {
+            "Dataset": "MMSE", 
+            "SPSS name": "MMSETotal", 
+            "highborder": "30.001", 
+            "highweb": "30", 
+            "id": "total", 
+            "label": "total score", 
+            "lowborder": "22", 
+            "lowweb": "0", 
+            "value": ""
+          }
+        ], 
+        "id": "MMSE", 
+        "label": "Mini-Metal State Examination", 
+        "value": ""
+      }
+    ], 
     "id": "cs", 
     "label": "Cognitive screening tools", 
     "value": ""
@@ -267,21 +450,36 @@
       {
         "children": [
           {
-            "children": [], 
+            "Dataset": "HADS", 
+            "SPSS name": "HADS_anxiety", 
+            "highborder": "9.001", 
+            "highweb": "21", 
             "id": "anxiety", 
             "label": "Anxiety scale", 
+            "lowborder": "0", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "HADS", 
+            "SPSS name": "HADS_depression", 
+            "highborder": "9.001", 
+            "highweb": "21", 
             "id": "depression", 
             "label": "Depression scale", 
+            "lowborder": "0", 
+            "lowweb": "0", 
             "value": ""
           }, 
           {
-            "children": [], 
+            "Dataset": "HADS", 
+            "SPSS name": "HADS_total", 
+            "highborder": "13.001", 
+            "highweb": "42", 
             "id": "total", 
             "label": "total score", 
+            "lowborder": "0", 
+            "lowweb": "0", 
             "value": ""
           }
         ], 
