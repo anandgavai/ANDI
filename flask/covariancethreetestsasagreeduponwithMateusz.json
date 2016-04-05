@@ -1,0 +1,9 @@
+[["m_AVLT_total1to5__ with m_AVLT_total1to5__","0.617183434529247"],
+["m_AVLT_total1to5__ with ef_LF_totalletter123__","0.196455966922922"],
+["m_AVLT_total1to5__ with ef_SF_Animals__","0.124591547727832"],
+["ef_LF_totalletter123__ with m_AVLT_total1to5__","0.196455966922923"],
+["ef_LF_totalletter123__ with ef_LF_totalletter123__","0.887962002000679"],
+["ef_LF_totalletter123__ with ef_SF_Animals__","0.167492613131436"],
+["ef_SF_Animals__ with m_AVLT_total1to5__","0.124591547727832"],
+["ef_SF_Animals__ with ef_LF_totalletter123__","0.167492613131436"],
+["ef_SF_Animals__ with ef_SF_Animals__","0.681707648691025"]] 

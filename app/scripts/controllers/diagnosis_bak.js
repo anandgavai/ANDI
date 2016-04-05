@@ -7,7 +7,9 @@
  * # MainCtrl
  * Controller of the andiApp
  */
-var defaultFolder = '2015-01-14';
+var defaultFolder = '2016-01-14';
+var minval = 0;
+var maxval = 99;
 app.controller("PanelController",function(){
   this.tab=1;
   this.selectTab=function(setTab){
@@ -56,12 +58,10 @@ app.controller('TableController', function($scope) {
   };
 });
 
-app.controller('treeController', function($http,$scope,$timeout,$modal) {
+app.controller('treeController', function($http,$scope,$timeout) {
   this.tests    = [];
   this.treeArr  = [];
-  this.txtvalue = '';
-  this.txtReplace = '';
-
+  this.rangArr  = {'min':minval,'max':maxval};
   $http.get('data/'+defaultFolder+'/tests.json').success(function (data) 
   {
     $scope.treeCtrl.tests =  data;
@@ -79,7 +79,6 @@ app.controller('treeController', function($http,$scope,$timeout,$modal) {
         "values": res.data 
       };
   });
-
   this.counter = 2;
   var tree;
   this.tabledata= {'0':'Table 0'};
@@ -93,15 +92,12 @@ app.controller('treeController', function($http,$scope,$timeout,$modal) {
       },
   ];
   this.expanding_property = {
-      field: "id",
+      field: "label",
       displayName: "label Name",
       sortable : true,
       filterable: true
   };
   this.submited = false;
-  this.selectedNode = {'total1to5': "", 'delayedrecall1to5': "", 'recognition1to5': "", 'total1to3': "", 'delrecall1to3': ""};
-  
-
   this.my_tree_handler = function (branch) {
       console.log('you clicked on', branch)
   }
@@ -199,6 +195,11 @@ app.controller('treeController', function($http,$scope,$timeout,$modal) {
         this.counterlimit++;
         this.tabledata[this.counterlimit] = 'Table '+this.counterlimit;
         this.counter++;
+
+        $timeout(function() {
+            $('.patientBtn_'+$scope.treeCtrl.counterlimit).remove();
+        }, 50);
+        
       }
   };
   // remove the selected column
@@ -210,9 +211,6 @@ app.controller('treeController', function($http,$scope,$timeout,$modal) {
     delete this.tabledata[index];
     delete $scope.patient[index];
     this.counter--;
-  };
-  this.removePatient = function(){
-    debugger;
   };
 
   this.addPatientBtn = function(val){
@@ -227,8 +225,55 @@ app.controller('treeController', function($http,$scope,$timeout,$modal) {
   this.submit=function(isValid){
   // check to make sure the form is completely valid
     if ($scope.patient.form.$invalid) {
-        console.log("Hello World");
+      if(!$scope.patient.form.sig.$error.required && !$scope.patient.form.conf.$error.required){
+        var files = $("#fileContent")[0].files;
+        if (files.length) {
+          var r = new FileReader();
+          r.onload = function(e) {
+              var contents = e.target.result;
+              var rows = contents.split('\n');
+              var obj = [];
+              var jsondata = {conf:$scope.patient.conf,sig:$scope.patient.sig,nomative:$scope.patient.nomative};
+              var patientIndex;
+              angular.forEach(rows, function(val,key) {
+                if(key!==0){
+                  var data = val.split(',');
+                  if(key===1){
+                    for(var i=0;i<(data.length-1);i++){
+                      if(data[(i+1)]!==null && data[(i+1)]!==undefined && data[(i+1)]!=='' ){
+                        jsondata[i] = {}; 
+                        jsondata[i]['test']      = []; 
+                      }
+                    }
+                  }
+                  if(key<5){
+                    for(var i=0;i<(data.length-1);i++){
+                      var obj = {};
+                      if(data[(i+1)]!==null && data[(i+1)]!==undefined && data[(i+1)]!=='' ){
+                        jsondata[i][data[0]] = data[(i+1)];
+                      }
+                    }
+                  }
+                  else{
+                    for(var i=0;i<(data.length-1);i++){
+                      if(data[(i+1)]!==null && data[(i+1)]!==undefined && data[(i+1)]!=='' ){
+                        var obj = {'label':data[0],'value':data[(i+1)]};
+                        obj.id = findTestId(data[0]);
+                        jsondata[i]['test'].push(obj);
+                      }
+                    }
+                  }
+                }
+              });
+              $scope.treeCtrl.submited = false;
+              console.log(jsondata);
+          };
+          r.readAsText(files[0]);  
+        }
+      }
+      else{
         $scope.treeCtrl.submited = true;
+      }
     }
     else{
       $scope.treeCtrl.submited = true;
@@ -239,20 +284,11 @@ app.controller('treeController', function($http,$scope,$timeout,$modal) {
           var patientTest = [];
           for (var key in $scope.patient[i].test) {
             if ($scope.patient[i].test.hasOwnProperty(key)) {
-              var idField =  (key).replace(/_/g," ");
-              var labelField =  findTest(idField,'id');
-
-              patientTest.push({
-                                id:idField,
-                                label:labelField.label,
-                                Dataset:labelField.Dataset,
-                                'SPSS name':labelField['SPSS name'],
-                                highborder:labelField.highborder,
-                                highweb:labelField.highweb,
-                                lowborder:labelField.lowborder,
-                                lowweb:labelField.lowweb,
-                                value:$scope.patient[i].test[key]
-                              });
+              for (var key1 in $scope.patient[i].test[key]) {
+                if ($scope.patient[i].test[key].hasOwnProperty(key1)) {
+                  patientTest.push({id:key,label:key1,value:$scope.patient[i].test[key][key1]});
+                }
+              }
             }
             patientObj[i] = {id:$scope.patient[i].id,
                             age:$scope.patient[i].age,
@@ -264,117 +300,24 @@ app.controller('treeController', function($http,$scope,$timeout,$modal) {
         }
       }
       console.log(patientObj);
+      $http.post('http://127.0.0.1:5000/formTestScores',patientObj);
     } 
   };
 
-  this.uploadCsv = function(){
-    var files = $("#fileContent")[0].files;
-    if (files.length) {
-      $scope.opts = {
-        backdrop: true,
-        backdropClick: true,
-        dialogFade: false,
-        keyboard: true,
-        templateUrl : 'views/modalContent.html',
-        controller : ModalInstanceCtrl,
-        resolve: {} // empty storage
-      };
-      $scope.opts.resolve.item = function() {
-        return angular.copy({name:$scope.name}); // pass name to Dialog
-      }
-      var modalInstance = $modal.open($scope.opts);
-      modalInstance.result.then(function(obj){
-        $scope.treeCtrl.txtvalue = obj.txtvalue;
-        $scope.treeCtrl.txtReplace = obj.txtReplace;
-        var r = new FileReader();
-        r.onload = function(e) {
-            var contents = e.target.result;
-            var rows = contents.split('\n');
-            angular.forEach(rows, function(val,key) {
-              var data = val.split(',');
-              if(key===1){
-                for(var i=0;i<data.length-1;i++){
-                  $scope.patient[i] = {'id':'','age':'','sex':'','education':'','test':{}};
-
-                  if(data[i]!=='' && i!==0){
-                    $timeout(function() {
-                      $scope.treeCtrl.counterlimit++;
-                      $scope.treeCtrl.tabledata[$scope.treeCtrl.counterlimit] = 'Table '+$scope.treeCtrl.counterlimit;
-                      $scope.treeCtrl.counter++;
-                    }, 50);
-                  }
-                }
-              }
-
-              if(key>0){
-                $timeout(function() {
-                  for(var j=0;j<data.length-1;j++){
-                    if(key>4){
-                      var field = data[0].replace(/ /g,"_");//'#test'+j+'_'+data[0].replace(/ /g,"");
-                      var fieldVal = parseInt(data[j+1]);
-                      if(fieldVal===parseInt($scope.treeCtrl.txtvalue)){
-                        fieldVal = parseInt($scope.treeCtrl.txtReplace);
-                      }
-                      $scope.patient.form['test'+j+'_'+field].$setViewValue(fieldVal);
-                      $scope.patient[j].test[field] = fieldVal;
-                      $('#test'+j+'_'+field).val(fieldVal);
-                    }
-                    else{
-                      $scope.patient.form[data[0]+j].$setViewValue(data[j+1]);
-                      var fieldVal = data[j+1];
-                      if(data[0]==='age'){
-                        fieldVal = new Date(data[j+1]);
-                      }
-                      $scope.patient[j][data[0]] = fieldVal;
-                      $('#'+data[0]+j).val(data[j+1]);
-                    }
-                  }
-                  $('.remBtn').parent().html('Patient');
-                  $("#fileContent").val(''); 
-                }, 50);
-              }
-
-            });
-        };
-        r.readAsText(files[0]);  
-            //on ok button press 
-      },function(){
-            //on cancel button press
-            console.log("Modal Closed");
-      });
-    }
-  }
-
-
-  var findTest = function(value,findField){
-    var testid = {};
+  var findTestId = function(value){
+    var testid = '';
     angular.forEach($scope.treeCtrl.treeArr, function(val,key) {
-      if(val.children.length>0){
-        angular.forEach(val.children, function(childVal,childKey) {
-          if(childVal[findField]===value){
-            testid =  childVal;
-          }
-        });
+      if(value===val.label){
+        testid =  val.id;
       }
     });
     return testid;
-  }
-
-  var ModalInstanceCtrl = function($scope, $modalInstance, $modal) {
-    $scope.ok = function () {
-      $modalInstance.close({txtvalue:$('#txtvalue').val(),txtReplace:$('#txtReplace').val()});
-    };
-    $scope.cancel = function () {
-      $modalInstance.dismiss('cancel');
-    };
   }
   //////////////////////////////////////////////////
   ////////////////////////////////////////////
   /////////////////////////////////////////
   // ENDs here make sure you adapt it :-)
 });
-
-
 
 
 var pat = [{

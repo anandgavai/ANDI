@@ -1,0 +1,31 @@
+myspecificvar,uniqueids,formulapart,added,mybestpowertransform,Nfinal,Ninitial,multilevel,mymean.transformedscores,mysd.transformedscores,printbestformula
+AVLTtotal,AVLT-total_1_to_5,transf.AVLTtotal.standardized:Sex + transf.AVLTtotal.standardized:age + transf.AVLTtotal.standardized:edu_Ver,0,1.11,5076,5097,TRUE,62.62540584,19.80995055,s + a + e
+AVLT_delrecal_all,AVLT-delayed_recall_1_to_5,transf.AVLT_delrecal_all.standardized:Sex + transf.AVLT_delrecal_all.standardized:age + transf.AVLT_delrecal_all.standardized:edu_Ver,0,0.75,4598,4815,TRUE,4.855351875,1.413185045,s + a + e
+AVLTrecognition,AVLT-recognition_1_to_5,transf.AVLTrecognition.standardized:Sex + transf.AVLTrecognition.standardized:age + transf.AVLTrecognition.standardized:edu_Ver,0,9.62,3781,3885,TRUE,1.06E+14,5.01E+13,s + a + e
+Clockdraw,Clock-score,transf.Clockdraw.standardized:edu_Ver,0,3.39,167,173,TRUE,5097.238454,1956.236779,e
+DARTIQ,DART-raw_score,transf.DARTIQ.standardized:age + transf.DARTIQ.standardized:edu_Ver,0,1.21,5129,5227,TRUE,266.4414327,43.27999163,a + e
+GIT1_Legkaarten,GIT1-Legkaart,transf.GIT1_Legkaarten.standardized:Sex + transf.GIT1_Legkaarten.standardized:age + transf.GIT1_Legkaarten.standardized:edu_Ver,0,1.16,160,160,TRUE,16.49138621,5.712771352,s + a + e
+HADS_anxiety,HADS-anxiety,transf.HADS_anxiety.standardized:edu_Ver,0,0.47,65,70,FALSE,1.90750373,0.440700928,e
+HADS_depression,HADS-depression,transf.HADS_depression.standardized:age,0.001,0.425,68,70,FALSE,1.271587449,0.641664355,a
+HADS_total,HADS-total,transf.HADS_total.standardized:age + transf.HADS_total.standardized:edu_Ver,0,0.484,63,70,FALSE,2.372635546,0.570334531,a + e
+JOLO_Raw,BJLO-rawscore,transf.JOLO_Raw.standardized:Sex + transf.JOLO_Raw.standardized:edu_Ver,0,3.615,69,70,FALSE,136655.1829,56738.47826,s + e
+LF_letter1,LF-letter_1,transf.LF_letter1.standardized:age + transf.LF_letter1.standardized:edu_Ver,0,0.67,3003,3030,TRUE,5.492412385,1.386813114,a + e
+LF_letter2,LF-letter_2,transf.LF_letter2.standardized:Sex + transf.LF_letter2.standardized:age + transf.LF_letter2.standardized:edu_Ver,0,0.65,2988,3026,TRUE,4.743545039,1.145797029,s + a + e
+LF_letter3,LF-letter_3,transf.LF_letter3.standardized:Sex + transf.LF_letter3.standardized:age + transf.LF_letter3.standardized:edu_Ver,0,0.68,2843,2859,TRUE,5.601432405,1.332396763,s + a + e
+LF_totalletter123,LF-total_letter_123,transf.LF_totalletter123.standardized:Sex + transf.LF_totalletter123.standardized:age + transf.LF_totalletter123.standardized:edu_Ver,0,0.66,2897,2915,TRUE,10.74090893,2.253623923,s + a + e
+RBMTpr1immrec,RBMT-prose_1_immrec,transf.RBMTpr1immrec.standardized:age + transf.RBMTpr1immrec.standardized:edu_Ver,0,0.26,463,492,TRUE,1.807634276,0.143433816,a + e
+RBMTpr1delrec,RBMT-prose_1_delrec,transf.RBMTpr1delrec.standardized:age + transf.RBMTpr1delrec.standardized:edu_Ver,0,0.54,396,419,TRUE,2.910394025,0.682169238,a + e
+RBMTpr2immrec,RBMT-prose_2_immrec,transf.RBMTpr2immrec.standardized:Sex + transf.RBMTpr2immrec.standardized:age + transf.RBMTpr2immrec.standardized:edu_Ver,0,0.32,346,366,TRUE,2.09631741,0.200796039,s + a + e
+RBMTpr2delrec,RBMT-prose_2_delrec,transf.RBMTpr2delrec.standardized:Sex + transf.RBMTpr2delrec.standardized:age + transf.RBMTpr2delrec.standardized:edu_Ver,0,0.78,358,365,TRUE,5.238650225,1.626268133,s + a + e
+RBMTprIMMED,RBMT-prose_1_plus_pr2_immrec,transf.RBMTprIMMED.standardized:Sex + transf.RBMTprIMMED.standardized:age + transf.RBMTprIMMED.standardized:edu_Ver,0,0.18,347,366,TRUE,1.700337436,0.084171848,s + a + e
+Sfanimal,SF-Animals,transf.Sfanimal.standardized:Sex + transf.Sfanimal.standardized:age + transf.Sfanimal.standardized:edu_Ver,0,0.48,5783,5958,TRUE,4.121306378,0.678942738,s + a + e
+Stroop_CardI_whole,Stroop-card_I_word,transf.Stroop_CardI_whole.standardized:Sex + transf.Stroop_CardI_whole.standardized:age + transf.Stroop_CardI_whole.standardized:edu_Ver,0,-0.68,1771,1810,TRUE,-0.077817579,0.008356012,s + a + e
+Stroop_CardII_whole,Stroop-card_II_color,transf.Stroop_CardII_whole.standardized:Sex + transf.Stroop_CardII_whole.standardized:age + transf.Stroop_CardII_whole.standardized:edu_Ver,0,-0.23,2147,2185,TRUE,-0.396266644,0.015643268,s + a + e
+Stroop_CardIII_whole,Stroop-card_III_interference,transf.Stroop_CardIII_whole.standardized:Sex + transf.Stroop_CardIII_whole.standardized:age + transf.Stroop_CardIII_whole.standardized:edu_Ver,0,-0.36,2131,2183,TRUE,-0.196288945,0.017430179,s + a + e
+TMTa,TMT-a,transf.TMTa.standardized:Sex + transf.TMTa.standardized:age + transf.TMTa.standardized:edu_Ver,0,-0.05,3141,3231,TRUE,-0.836013516,0.017009914,s + a + e
+TMTb,TMT-b,transf.TMTb.standardized:Sex + transf.TMTb.standardized:age + transf.TMTb.standardized:edu_Ver,0,-0.14,3079,3188,TRUE,-0.542309234,0.033879806,s + a + e
+TOL_tms,TOL-tms,transf.TOL_tms.standardized:age,0.001,0.433,62,63,FALSE,2.617186326,1.254364352,a
+WAIS_III_Similarities,WAIS_III-Simil,transf.WAIS_III_Similarities.standardized:edu_Ver,0,1.92,274,277,TRUE,477.1645596,168.5042018,e
+WAIS_R_Coding,WAIS_R-digit_symb_coding,transf.WAIS_R_Coding.standardized:age + transf.WAIS_R_Coding.standardized:edu_Ver,0,0.649,70,70,FALSE,12.55913714,1.80031905,a + e
+MWCSTCAT,MWCST-no_cat,transf.MWCSTCAT.standardized:age + transf.MWCSTCAT.standardized:edu_Ver,0,6.58,243,259,TRUE,96693.66942,50781.69592,a + e
+MWCSTERR,MWCST-no_err,transf.MWCSTERR.standardized:Sex + transf.MWCSTERR.standardized:age + transf.MWCSTERR.standardized:edu_Ver,0.001,0.45,248,259,TRUE,2.245118728,0.893043221,s + a + e

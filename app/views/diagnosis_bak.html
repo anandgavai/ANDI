@@ -24,8 +24,7 @@
                 </select> -->
 
                 <h3>Search for relevant tests</h3>
-                <input type="text" ng-model="testSearch" class = "form-control" 
-                ng-keyup="" placeholder ="Search for ..."/>
+                <input type="text" ng-model="testSearch" class = "form-control" placeholder ="Search for ..."/>
                  <div
                   ivh-treeview-id-attribute="'uuid'"
                   ivh-treeview="treeCtrl.tests"
@@ -65,21 +64,12 @@
         <div class="panel col-sm-12 col-xs-12 col-lg-12" ng-show="panel.isSelected(2)" class="tab-pane fade in active">
             <form name="patient.form" ng-model="fields" ng-submit="treeCtrl.submit()" novalidate angular-validator>  
               <div class="table-responsive" >
-                
-                <span ng-init="pateient_type=1"  class="" >
-                  <label><input type="radio"  ng-change="treeCtrl.addPatientBtn(true)" ng-value="true" ng-model="pateient_type" ng-click="isDisabled = false;"  value="1" />Do you want to type in data</label>
-
-                  <label><input type="radio"  ng-change="treeCtrl.addPatientBtn(false)" ng-value="false" ng-model="pateient_type" ng-click="isDisabled = true;"  value="2" />Do you want to upload file</label>
-                </span>
-
                 <div>
                   <div style="width:auto;overflow:auto;">
                     <table class="">
-
                     <tr>
                       <td valign="top" ng-repeat="data in treeCtrl.tabledata" class="tableindex{{treeCtrl.counterlimit}}">
-                        <table  ng-attr-export-csv="{{ treeCtrl.counterlimit===0 ? 'csv' : '' }}" separator=","  border="0">
-  <!-- ng-style="{ margin:{{treeCtrl.counterlimit}}===0? '' : 0px 0px 0px 0px' }"-->
+                        <table  ng-attr-export-csv="{{ treeCtrl.counterlimit===0 ? 'csv' : '' }}" separator=","  border="0"   ng-style="{ margin:{{treeCtrl.counterlimit}}===0? '' : '25px 0px 0px 0px' }">
                           <tr>
                             <td colspan="2" >
                                 <tree-grid tree-obj="patient" 
@@ -90,9 +80,8 @@
                       </td>
                     </tr>
                   </table>
-                     
+                      <button type="button" class ="btn btn-addPatient" ng-click="treeCtrl.addPatient()"> Add Patient</button>
                 </div>
-                 <button type="button" class ="btn btn-addPatient" ng-click="treeCtrl.addPatient()"> Add Patient</button>
                 </div>
                 <hr>
                 <a class="btn" title="Export Table" ng-click="csv.generate()" ng-href="{{ csv.link() }}" download="PatientTable.csv">
@@ -106,12 +95,10 @@
                     <span class="btn btn-default btn-file">
                     <input type="file" name="..." id="fileContent" ></span>
                     <span class="fileinput-filename"></span>
-                    <a class="btn" title="Upload to Table" ng-click="treeCtrl.uploadCsv()">
-                      <i class="glyphicon glyphicon-upload"></i> Upload data
-                    </a>
+                    <a class="btn" title="Upload to Table" ng-click="csv.generate()" ng-href="{{ csv.link() }}" upload="PatientTable.csv">
+                  <i class="glyphicon glyphicon-upload"></i> Upload data
+                  </a>
                   </div>
-
-
                   <br><br>
                   <h3>Advanced Settings</h3>
                   <hr>
