@@ -1,0 +1,24 @@
+category short name	ID1	ID2	ID3	category	Long name 1	Long name 2	long name 3	lowweb	highweb	lowborder	highborder	SPSS name	Dataset
+m	AVLT	total 1 to 5		Memory Tests	Auditory Verbal Learning Test (AVLT)	Total trial 1 to 5		0	75	15	75.001	AVLTtotal	AVLT
+m	AVLT	delayed recall 1 to 5		Memory Tests	Auditory Verbal Learning Test (AVLT)	Delayed recall 1 to 5		0	15	3	15.001	AVLT_delrecal_all	AVLT
+m	AVLT	recognition 1 to 5		Memory Tests	Auditory Verbal Learning Test (AVLT)	Recognition 1 to 5		0	30	8	30.001	AVLTrecognition	AVLT
+m	RBMT	prose 1 immrec		Memory Tests	Rivermead Behaviour Memory Test (RBMT)	prose 1 immediate recall		0	42	5	42.001	RBMTpr1immrec	RBMT
+m	RBMT	prose 1 delrec		Memory Tests	Rivermead Behaviour Memory Test (RBMT)	prose 1 delayed recall		0	42	2	42.001	RBMTpr1delrec	RBMT
+m	RBMT	prose 2 immrec		Memory Tests	Rivermead Behaviour Memory Test (RBMT)	prose 2 immediate recall		0	42	5	42.001	RBMTpr2immrec	RBMT
+m	RBMT	prose 2 delrec		Memory Tests	Rivermead Behaviour Memory Test (RBMT)	prose 2 delayed recall		0	42	2	42.001	RBMTpr2delrec	RBMT
+m	RBMT	prose 1 plus pr2 immrec		Memory Tests	Rivermead Behaviour Memory Test (RBMT)	prose 1 + 2 immediate recall		0	84	10	84.001	RBMTprIMMED	RBMT
+m	RBMT	prose 1 plus pr2 delrec		Memory Tests	Rivermead Behaviour Memory Test (RBMT)	prose 1 + 2 delayed recall		0	84	4	84.001	RBMTprDELAY	RBMT
+wm	TMT	a		Attention and Working Memory	Trail Making Test	a		0	3000	10	150.001	TMTa	TMT
+wm	TMT	b		Attention and Working Memory	Trail Making Test	b		0	3000	10	500.001	TMTb	TMT
+wm	Stroop	card I word		Attention and Working Memory	Stroop Color - Word Test	Card I word		0	3000	30	100.001	Stroop_CardI_whole	Stroop
+wm	Stroop	card II color		Attention and Working Memory	Stroop Color - Word Test	Card II color		0	3000	30	100.001	Stroop_CardII_whole	Stroop
+wm	Stroop	card III interference		Attention and Working Memory	Stroop Color - Word Test	Card III interference		0	3000	30	500.001	Stroop_CardIII_whole	Stroop
+ef	LF	letter 1		Executive Functions	Letter Fluency	1st letter		0	60	3	600.001	LF_letter1	LF
+ef	LF	letter 2		Executive Functions	Letter Fluency	2nd letter		0	60	3	600.001	LF_letter2	LF
+ef	LF	letter 3		Executive Functions	Letter Fluency	3rd letter		0	60	3	600.001	LF_letter3	LF
+ef	LF	total letter 123		Executive Functions	Letter Fluency	total 3 letters		0	180	10	180.001	LF_totalletter123	LF
+ef	SF	Animals		Executive Functions	Semantic Fluency	total animals 1 minute		0	60	8	60.001	Sfanimal	SF
+iq	DART	raw score		(premorbid) IQ tests	Dutch Adult Reading Test	raw score		0	100	20	100.001	DARTRAW	DART
+q	HADS	anxiety		Questionnaires depression/anxiety	Hospital Anxiety Depression Scale	Anxiety scale		0	21	0	9.001	HADS_anxiety	HADS
+q	HADS	depression		Questionnaires depression/anxiety	Hospital Anxiety Depression Scale	Depression scale		0	21	0	9.001	HADS_depression	HADS
+q	HADS	total		Questionnaires depression/anxiety	Hospital Anxiety Depression Scale	total score		0	42	0	13.001	HADS_total	HADS

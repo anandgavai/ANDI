@@ -32,10 +32,96 @@
             "label": "Recognition 1 to 5", 
             "lowborder": "8", 
             "lowweb": "0"
+          }, 
+          {
+            "Dataset": "AVLT", 
+            "SPSS name": "AVLT_1_3", 
+            "highborder": "45.001", 
+            "highweb": "45", 
+            "id": "AVLT-total_1_to_3", 
+            "label": "Total trial 1 to 3", 
+            "lowborder": "8", 
+            "lowweb": "0"
+          }, 
+          {
+            "Dataset": "AVLT", 
+            "SPSS name": "AVLTDelayed1_3", 
+            "highborder": "15.001", 
+            "highweb": "15", 
+            "id": "AVLT-del_recall_1_to_3", 
+            "label": "Delayed recall 1 to 3", 
+            "lowborder": "2", 
+            "lowweb": "0"
           }
         ], 
         "id": "AVLT", 
         "label": "Auditory Verbal Learning Test (AVLT)"
+      }, 
+      {
+        "children": [
+          {
+            "Dataset": "SRT", 
+            "SPSS name": "SRT_TR", 
+            "highborder": "150.001", 
+            "highweb": "150", 
+            "id": "SRT-TR", 
+            "label": "Total recall (TR)", 
+            "lowborder": "45", 
+            "lowweb": "0"
+          }, 
+          {
+            "Dataset": "SRT", 
+            "SPSS name": "SRT_LTR", 
+            "highborder": "150.001", 
+            "highweb": "150", 
+            "id": "SRT-LTR", 
+            "label": "Long Term Retrieval (LTR)", 
+            "lowborder": "2", 
+            "lowweb": "0"
+          }, 
+          {
+            "Dataset": "SRT", 
+            "SPSS name": "SRT_LTS", 
+            "highborder": "150.001", 
+            "highweb": "150", 
+            "id": "SRT-LTS", 
+            "label": "Long Term Storage (LTS)", 
+            "lowborder": "2", 
+            "lowweb": "0"
+          }, 
+          {
+            "Dataset": "SRT", 
+            "SPSS name": "SRT_CLTR", 
+            "highborder": "150.001", 
+            "highweb": "150", 
+            "id": "SRT-CLTR", 
+            "label": "Consistent Long Term Retrieval (CLTR)", 
+            "lowborder": "0", 
+            "lowweb": "0"
+          }, 
+          {
+            "Dataset": "SRT", 
+            "SPSS name": "SRT_MCR", 
+            "highborder": "12.001", 
+            "highweb": "12", 
+            "id": "SRT-MCR", 
+            "label": "Multiple Choice Recognition (MCR)", 
+            "lowborder": "5", 
+            "lowweb": "0"
+          }, 
+          {
+            "Dataset": "SRT", 
+            "SPSS name": "SRT_DR", 
+            "highborder": "12.001", 
+            "highweb": "12", 
+            "id": "SRT-DR", 
+            "label": "Delayed Recall (DR)", 
+            "lowborder": "1", 
+            "lowweb": "0"
+          }
+        ], 
+        "id": "SRT", 
+        "label": "Selective Reminding Test (SRT)"
       }, 
       {
         "children": [
@@ -104,7 +190,7 @@
         "label": "Rivermead Behaviour Memory Test (RBMT)"
       }
     ], 
-    "id": "m", 
+    "id": "mem", 
     "label": "Memory Tests"
   }, 
   {
@@ -123,7 +209,7 @@
           }, 
           {
             "Dataset": "TMT", 
-            "SPSS name": "TMTb", 
+            "SPSS name": "TMTa", 
             "highborder": "500.001", 
             "highweb": "3000", 
             "id": "TMT-b", 
@@ -160,7 +246,7 @@
           {
             "Dataset": "Stroop", 
             "SPSS name": "Stroop_CardIII_whole", 
-            "highborder": "500.001", 
+            "highborder": "100.001", 
             "highweb": "3000", 
             "id": "Stroop-card_III_interference", 
             "label": "Card III interference", 
@@ -215,7 +301,7 @@
             "highborder": "180.001", 
             "highweb": "180", 
             "id": "LF-total_letter_123", 
-            "label": "total 3 letters", 
+            "label": "total 3 lettters", 
             "lowborder": "10", 
             "lowweb": "0"
           }
@@ -234,6 +320,16 @@
             "label": "total animals 1 minute", 
             "lowborder": "8", 
             "lowweb": "0"
+          }, 
+          {
+            "Dataset": "SF", 
+            "SPSS name": "Sfoccupation", 
+            "highborder": "60.001", 
+            "highweb": "60", 
+            "id": "SF-Occupations", 
+            "label": "total occupations 1 minute", 
+            "lowborder": "5", 
+            "lowweb": "0"
           }
         ], 
         "id": "SF", 
@@ -245,6 +341,22 @@
   }, 
   {
     "children": [
+      {
+        "children": [
+          {
+            "Dataset": "Raven", 
+            "SPSS name": "RAPM_12itemShort", 
+            "highborder": "120.01", 
+            "highweb": "12", 
+            "id": "RAPM-shortform_12_item", 
+            "label": "12 item short form", 
+            "lowborder": "3", 
+            "lowweb": "0"
+          }
+        ], 
+        "id": "RAPM", 
+        "label": "Raven Advanced Progressive Matrices"
+      }, 
       {
         "children": [
           {
@@ -264,6 +376,28 @@
     ], 
     "id": "iq", 
     "label": "(premorbid) IQ tests"
+  }, 
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "Dataset": "MMSE", 
+            "SPSS name": "MMSETotal", 
+            "highborder": "30.001", 
+            "highweb": "30", 
+            "id": "MMSE-total", 
+            "label": "total score", 
+            "lowborder": "22", 
+            "lowweb": "0"
+          }
+        ], 
+        "id": "MMSE", 
+        "label": "Mini-Metal State Examination"
+      }
+    ], 
+    "id": "cs", 
+    "label": "Cognitive screening tools"
   }, 
   {
     "children": [

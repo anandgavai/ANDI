@@ -9,49 +9,49 @@ library(tidyjson)
 
 #outputJSON <- toJSON(5)
  
-myJSON<-fromJSON("myJSON.json")
+#myJSON<-fromJSON("myJSON.json")
  
-#  myJSON<-'{
-#  "0": {
-#    "id": "1",
-#    "age": "2016-03-31T22:00:00.000Z",
-#    "sex": "0",
-#    "education": "1",
-#    "test": [
-#      {
-#        "id": "RAPM-shortform_12_item",
-#        "label": "12_item_short_form",
-#        "value": 12
-#      },
-#      {
-#        "id": "DART-raw_score",
-#        "label": "raw_score",
-#        "value": 14
-#      }
-#      ]
-#  },
-#  "1": {
-#    "id": "2",
-#    "age": "2016-04-01T22:00:00.000Z",
-#    "sex": "1",
-#    "education": "2",
-#    "test": [
-#      {
-#        "id": "RAPM-shortform_12_item",
-#        "label": "12_item_short_form",
-#        "value": 13
-#      },
-#      {
-#        "id": "DART-raw_score",
-#        "label": "raw_score",
-#        "value": 15
-#      }
-#      ]
-#  },
-#  "conf": "95",
-#  "sig": "twoTailed",
-#  "nomative": "2015-01-14"
-#  }'
+ myJSON<-'{
+ "0": {
+   "id": "1",
+   "age": "2016-03-31T22:00:00.000Z",
+   "sex": "0",
+   "education": "1",
+   "test": [
+     {
+       "id": "RAPM-shortform_12_item",
+       "label": "12_item_short_form",
+       "value": 12
+     },
+     {
+       "id": "DART-raw_score",
+       "label": "raw_score",
+       "value": 14
+     }
+     ]
+ },
+ "1": {
+   "id": "2",
+   "age": "2016-04-01T22:00:00.000Z",
+   "sex": "1",
+   "education": "2",
+   "test": [
+     {
+       "id": "RAPM-shortform_12_item",
+       "label": "12_item_short_form",
+       "value": 13
+     },
+     {
+       "id": "DART-raw_score",
+       "label": "raw_score",
+       "value": 15
+     }
+     ]
+ },
+ "conf": "95",
+ "sig": "twoTailed",
+ "nomative": "2015-01-14"
+ }'
  
 
 
@@ -92,4 +92,4 @@ myFunc<-function(myJSON){
      #return(myJSON)
  }
  
-
+myFunc(myJSON)

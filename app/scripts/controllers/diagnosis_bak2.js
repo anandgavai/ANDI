@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the andiApp
  */
-var defaultFolder = '2016-01-14';
+var defaultFolder = '2015-01-14';
 app.controller("PanelController",function(){
   this.tab=1;
   this.selectTab=function(setTab){
@@ -66,6 +66,11 @@ app.controller('treeController', function($http,$scope,$timeout,$modal,$q) {
   {
     $scope.treeCtrl.tests =  data;
     $scope.patient.nomative = defaultFolder;
+    $scope.treeCtrl.treeArr = _(data).chain()
+                      .zip(_(data).pluck('children'))
+                      .flatten()
+                      .compact()
+                      .value();
   });
 
   $http.get("data/folders.json").then(function(res){
@@ -89,7 +94,7 @@ app.controller('treeController', function($http,$scope,$timeout,$modal,$q) {
   ];
   this.expanding_property = {
       field: "id",
-      displayName: "id Name",
+      displayName: "label Name",
       sortable : true,
       filterable: true
   };
@@ -105,11 +110,11 @@ app.controller('treeController', function($http,$scope,$timeout,$modal,$q) {
     {
       $scope.treeCtrl.tests =  data;
       $scope.patient.nomative = val;
-     /* $scope.treeCtrl.treeArr = _(data).chain()
+      $scope.treeCtrl.treeArr = _(data).chain()
                       .zip(_(data).pluck('children'))
                       .flatten()
                       .compact()
-                      .value();*/
+                      .value();
     });
   }
 
@@ -135,7 +140,7 @@ app.controller('treeController', function($http,$scope,$timeout,$modal,$q) {
   this.getSelectedNodes=function(node){
     //return node.label;
     if (node.isSelected==true || node.children.length>0) {
-      return node.id;
+      return node.label;
     };
   };
   this.getjson=function (tests) {
@@ -240,8 +245,9 @@ app.controller('treeController', function($http,$scope,$timeout,$modal,$q) {
           var patientTest = [];
           for (var key in $scope.patient[i].test) {
             if ($scope.patient[i].test.hasOwnProperty(key)) {
-              var idField =  key;//(key).replace(/_/g," ");
+              var idField =  (key).replace(/_/g," ");
               var labelField =  findTest(idField,'id');
+
               patientTest.push({
                                 id:idField,
                                 label:labelField.label,
@@ -256,8 +262,6 @@ app.controller('treeController', function($http,$scope,$timeout,$modal,$q) {
             }
             patientObj[i] = {id:$scope.patient[i].id,
                             age:$scope.patient[i].age,
-                            dob:$scope.patient[i].dob,
-                            dot:$scope.patient[i].dot,
                             sex:$scope.patient[i].sex,
                             education:$scope.patient[i].education,
                             test:patientTest};
@@ -266,20 +270,7 @@ app.controller('treeController', function($http,$scope,$timeout,$modal,$q) {
         }
       }
       console.log(patientObj);
-
-      /*var config = {
-          headers: {
-              'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-          }
-      }
-      $http.post('http://localhost/Compressed/formTestScores/index.php',patientObj, config)
-      .success(function (data, status, headers, config) {
-          console.log(data);
-      })
-      .error(function (data, status, header, config) {
-        console.log(data);  
-      });*/
-
+      $http.post('http://127.0.0.1:5000/formTestScores',patientObj);
     } 
   };
 
@@ -301,19 +292,19 @@ app.controller('treeController', function($http,$scope,$timeout,$modal,$q) {
       var modalInstance = $modal.open($scope.opts);
       modalInstance.result.then(function(obj){
         $scope.treeCtrl.txtvalue = obj.txtvalue;
-        var replacearr = obj.txtvalue.split(",");
+        $scope.treeCtrl.txtReplace = obj.txtReplace;
         var r = new FileReader();
         r.onload = function(e) {
             var contents = e.target.result;
             var rows = contents.split('\n');
-            $scope.patient[0] = {'id':'','age':'','dob':'','dot':'','sex':'','education':'','test':{}};
+            $scope.patient[0] = {'id':'','age':'','sex':'','education':'','test':{}};
             angular.forEach(rows, function(val,key) {
               var data = val.split(',');
               if(key===1){
                 var k = 1;
                 for(var i=0;i<data.length;i++){
                   if(data[i]!=='' && i>1){
-                    $scope.patient[k] = {'id':'','age':'','dob':'','dot':'','sex':'','education':'','test':{}};
+                    $scope.patient[k] = {'id':'','age':'','sex':'','education':'','test':{}};
                     $timeout(function() {
                       $scope.treeCtrl.counterlimit++;
                       $scope.treeCtrl.tabledata[$scope.treeCtrl.counterlimit] = 'Table '+$scope.treeCtrl.counterlimit;
@@ -322,6 +313,7 @@ app.controller('treeController', function($http,$scope,$timeout,$modal,$q) {
                     k++;
                   }
                 }
+
               }
 
               if(key>0){
@@ -329,26 +321,20 @@ app.controller('treeController', function($http,$scope,$timeout,$modal,$q) {
                   for(var j=0;j<data.length;j++){
                     if(data[j]!=='' && j!==0){
 
-                      if(key>6){
-                        var field = data[0];//data[0].replace(/ /g,"_");//'#test'+j+'_'+data[0].replace(/ /g,"");
-                        var fieldVal = data[j];//parseInt(data[j]);
-                        if ($.inArray(fieldVal, replacearr) >= 0) {
-                          fieldVal = 999999999;
-                        }
-                        else{
-                          fieldVal = parseInt(fieldVal);
-                        }
-                        /*if(fieldVal===parseInt($scope.treeCtrl.txtvalue)){
+                      if(key>4){
+                        var field = data[0].replace(/ /g,"_");//'#test'+j+'_'+data[0].replace(/ /g,"");
+                        var fieldVal = parseInt(data[j]);
+                        if(fieldVal===parseInt($scope.treeCtrl.txtvalue)){
                           fieldVal = parseInt($scope.treeCtrl.txtReplace);
-                        }*/
+                        }
                         $scope.patient.form['test'+(j-1)+'_'+field].$setViewValue(fieldVal);
                         $scope.patient[j-1].test[field] = fieldVal;
-                        $('#test'+(j-1)+'_'+field.replace(/ /g,"_")).val(fieldVal);
+                        $('#test'+(j-1)+'_'+field).val(fieldVal);
                       }
                       else{
                         $scope.patient.form[data[0]+(j-1)].$setViewValue(data[j]);
                         var fieldVal = data[j];
-                        if(data[0]==='age' || data[0]==='dob' || data[0]==='dot'){
+                        if(data[0]==='age'){
                           fieldVal = new Date(data[j]);
                         }
                         $scope.patient[j-1][data[0]] = fieldVal;
@@ -374,33 +360,22 @@ app.controller('treeController', function($http,$scope,$timeout,$modal,$q) {
 
 
   var findTest = function(value,findField){
-    $scope.testid = {};
-    $scope.keepgoing = true;
-    childTest($scope.treeCtrl.tests,value,findField);
-    $scope.keepgoing = true;
-    return $scope.testid;
-  }
-
-  var childTest = function(scope,value,findField){
-    angular.forEach(scope, function(childVal,childKey) {
-      if($scope.keepgoing) {
-        if(childVal.children.length>0){
-          childTest(childVal.children,value,findField);
-        }
-        else
-        {
+    var testid = {};
+    angular.forEach($scope.treeCtrl.treeArr, function(val,key) {
+      if(val.children.length>0){
+        angular.forEach(val.children, function(childVal,childKey) {
           if(childVal[findField]===value){
-            $scope.testid = childVal;
-            $scope.keepgoing = false;
+            testid =  childVal;
           }
-        }
+        });
       }
     });
+    return testid;
   }
 
   var ModalInstanceCtrl = function($scope, $modalInstance, $modal) {
     $scope.ok = function () {
-      $modalInstance.close({txtvalue:$('#txtvalue').val()});
+      $modalInstance.close({txtvalue:$('#txtvalue').val(),txtReplace:$('#txtReplace').val()});
     };
     $scope.cancel = function () {
       $modalInstance.dismiss('cancel');
@@ -497,5 +472,4 @@ app.controller('plotController', function($scope){
       ];
     }
   };
-  
 });
