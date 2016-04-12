@@ -266,19 +266,19 @@ app.controller('treeController', function($http,$scope,$timeout,$modal,$q) {
         }
       }
       console.log(patientObj);
-
-      /*var config = {
+      // 'http://localhost/Compressed/formTestScores/index.php'
+      var config = {
           headers: {
               'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
           }
       }
-      $http.post('http://localhost/Compressed/formTestScores/index.php',patientObj, config)
+      $http.post('http://127.0.0.1:5000/formTestScores',patientObj, config)
       .success(function (data, status, headers, config) {
           console.log(data);
       })
       .error(function (data, status, header, config) {
         console.log(data);  
-      });*/
+      });
 
     } 
   };

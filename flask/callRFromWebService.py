@@ -1,7 +1,7 @@
 import rpy2
 from flask import Flask
 from flask import request
-import jsonhttp://127.0.0.1:5000/formTestScores
+import json 
 from numpy import *
 from rpy2.robjects.numpy2ri import numpy2ri
 import scipy as sp
@@ -11,6 +11,7 @@ from rpy2.robjects.packages import importr
 import rpy2.robjects as ro
 import rpy2.rinterface as rinterface
 import pandas.rpy.common as com
+from rpy2.robjects.packages import SignatureTranslatedAnonymousPackage
 import subprocess
 import sys
 from rpy2.robjects import pandas2ri
@@ -33,15 +34,31 @@ def api_demoTestScores():
         return "JSON Object: " + json.dumps(request.json)
 
 
+"""
 @app.route('/formTestScores',methods=['GET','POST'])
 def api_formTestScores():
     if request.headers['Content-Type']=='application/json':
-        jsonlite=importr('jsonlite')
-        mydata= json.dumps(request.json)
-        ro.r('mydata <- fromJSON({})'.format(repr(mydata)))
-        ro.r('source("/home/anandgavai/ANDI/flask/functionforANDI6.R")')
-        # return tobj
-        return "ok"
+        #jsonlite=importr('jsonlite')
+        myPyJSON= request.data
+        ro.r('myJSON <- fromJSON({})'.format(repr(myPyJSON)))
+        ro.r('source("/home/anandgavai/ANDI/flask/functionforandi.R")')
+        t = json.dumps(ro.r('myFunc({})'.format(repr(myPyJSON))))
+        #return ro.r('whichtestindexes')
+        print t
+        return t
+"""
+
+@app.route('/formTestScores',methods=['GET','POST'])
+def api_formTestScores():
+    if request.headers['Content-Type']=='application/json':
+        #jsonlite=importr('jsonlite')
+        myPyJSON=request.data
+        print myPyJSON
+        p = subprocess.Popen(["Rscript", "functionforandi.R"], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+        t = p.communicate(myPyJSON)
+        print t
+        return t
+
 
 if __name__ == '__main__':
     app.debug=True
