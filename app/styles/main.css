@@ -219,3 +219,8 @@ pre {
   width: 100%;
   height: 500px;
 }
+
+.widthset{
+ max-width: 500px
+
+}

@@ -31,7 +31,7 @@ angular
             "      </tr>\n" +
 
             "      <tr>\n" +
-            "        <td class=\"left-td\" ng-if=\"row1.treeIndex === 0\">date of birth</td>\n" +
+            "        <td class=\"left-td\" ng-if=\"row1.treeIndex === 0\">Date of birth</td>\n" +
             "        <td>\n" +
             "        <input ng-disabled=\"treeDisable\" type=\"date\" name=\"dob{{row1.treeIndex}}\" id=\"dob{{row1.treeIndex}}\" ng-model=\"row1.patient[row1.treeIndex].dob\" required>\n" +
             "           <span class=\"has-error\" ng-show=\"row1.patient.form.dob{{row1.treeIndex}}.$error.required && treeTableControl.submited\">Required</span> </td>\n" +
@@ -39,7 +39,7 @@ angular
             "      </tr>\n" +
 
             "      <tr>\n" +
-            "        <td class=\"left-td\" ng-if=\"row1.treeIndex === 0\">date of test</td>\n" +
+            "        <td class=\"left-td\" ng-if=\"row1.treeIndex === 0\">Date of test</td>\n" +
             "        <td>\n" +
             "        <input ng-disabled=\"treeDisable\" type=\"date\" name=\"dot{{row1.treeIndex}}\" id=\"dot{{row1.treeIndex}}\" ng-model=\"row1.patient[row1.treeIndex].dot\" required>\n" +
             "           <span class=\"has-error\" ng-show=\"row1.patient.form.dot{{row1.treeIndex}}.$error.required && treeTableControl.submited\">Required</span> </td>\n" +

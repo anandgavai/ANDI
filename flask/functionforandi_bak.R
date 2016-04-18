@@ -3,7 +3,7 @@ library("lubridate")
 load("//home//anandgavai//ANDI/flask//summarystats.RData")
 
 ANDImetadata <- read.csv("//home//anandgavai//ANDI/flask//metadataforMMNCandpatient.csv")
-myFunc <- function(myJSON){
+myFunc <- function( myJSON){
   json <- fromJSON(myJSON)
   no.patients <- length(head(json,-3))
   mypatdata <- NULL
@@ -157,14 +157,14 @@ myFunc <- function(myJSON){
     totaloutputdataframe <- rbind( totaloutputdataframe, myoutputdataframe)
   }
   myoutputdata <- toJSON( totaloutputdataframe,pretty = T)
-  #write (myoutputdata, file="//home//anandgavai//andi-viz//andi-vis//data//Result.json")
+  cat(myoutputdata)
+  write(myoutputdata,file="Result.json")
   return(myoutputdata)
-
 }
 
 #!/usr/bin/env Rscript
 f <- file("stdin")
 open(f)
 json_string <- readLines(f)
+
 myFunc(json_string)
-#myFunc(f)

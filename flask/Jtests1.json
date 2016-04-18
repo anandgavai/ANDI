@@ -1,0 +1,70 @@
+{
+  "0": {
+    "id": "1111",
+    "age": "2016-04-02T22:00:00.000Z",
+    "dob": "2016-04-02T22:00:00.000Z",
+    "dot": "2016-04-09T22:00:00.000Z",
+    "sex": "0",
+    "education": "3",
+    "test": [
+      {
+        "id": "TMT-a",
+        "label": "a",
+        "Dataset": "TMT",
+        "SPSS name": "TMTa",
+        "highborder": "150.001",
+        "highweb": "3000",
+        "lowborder": "10",
+        "lowweb": "0",
+        "value": 22
+      },
+      {
+        "id": "TMT-b",
+        "label": "b",
+        "Dataset": "TMT",
+        "SPSS name": "TMTb",
+        "highborder": "500.001",
+        "highweb": "3000",
+        "lowborder": "10",
+        "lowweb": "0",
+        "value": 44
+      },
+      {
+        "id": "Stroop-card_I_word",
+        "label": "Card I word",
+        "Dataset": "Stroop",
+        "SPSS name": "Stroop_CardI_whole",
+        "highborder": "100.001",
+        "highweb": "3000",
+        "lowborder": "30",
+        "lowweb": "0",
+        "value": 2
+      },
+      {
+        "id": "Stroop-card_II_color",
+        "label": "Card II color",
+        "Dataset": "Stroop",
+        "SPSS name": "Stroop_CardII_whole",
+        "highborder": "100.001",
+        "highweb": "3000",
+        "lowborder": "30",
+        "lowweb": "0",
+        "value": 33
+      },
+      {
+        "id": "Stroop-card_III_interference",
+        "label": "Card III interference",
+        "Dataset": "Stroop",
+        "SPSS name": "Stroop_CardIII_whole",
+        "highborder": "500.001",
+        "highweb": "3000",
+        "lowborder": "30",
+        "lowweb": "0",
+        "value": 44
+      }
+    ]
+  },
+  "conf": "99",
+  "sig": "twoTailed",
+  "nomative": "2016-01-14"
+}

@@ -99,7 +99,7 @@
                 <i class="glyphicon glyphicon-download-alt"></i> Download Template
                 </a>
                 <div class="alert alert-info">
-                  <strong>NOTE!</strong> To upload a batch of patient scores please download this template. Please make sure each patient has their own column.
+                  <strong>Information!</strong> If there exists more than 5 patients. Download this template; fill in the test scores for more patients in each column and upload this file. Make sure none of the fields are left empty !
                 </div>
 
                   <div  class="fileinput fileinput-new" data-provides="fileinput">
@@ -117,7 +117,7 @@
                   <hr>
                     <label>One tailed or two tailed </label>
                     <select name="sig" ng-model="patient.sig"  class ="form-control" required>
-                      <option value="twoTailed" selected>Two Tailed</option>
+                      <option value="twoTailed">Two Tailed</option>
                       <option value="oneTailedRight">One Tailed Right</option> 
                       <option value="oneTailedLeft">One Tailed Left</option>
                     </select>
@@ -125,7 +125,7 @@
                     <br><br>
                     <label>Confidence Interval</label>
                     <select name="conf" ng-model="patient.conf"  class ="form-control" required>
-                      <option value="95" selected>95</option>                      
+                      <option value="95">95</option>                      
                       <option value="90">90</option>                      
                       <option value="99">99</option>
                       <option value="99">68</option>
@@ -153,8 +153,7 @@
              <option value="scatter"> Scatter plot </option>
              <option value="radar"> Radar Chart </option>
             </select>
-            <div id="lines-graph" class="lines-graph"></div>
-            <!-- <nvd3 options="plotCtrl.options" data="plotCtrl.data"></nvd3> -->
+            <nvd3 options="plotCtrl.options" data="plotCtrl.data"></nvd3>
           </div>
         </div>  
       </div>
